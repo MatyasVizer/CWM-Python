@@ -7,6 +7,7 @@
 
 # mutable
 
+import math  # math is now an object
 y = 1
 print(id(y))
 y = y + 1
@@ -77,3 +78,60 @@ print(course.replace("P", "-"))
 
 print("Programming" in course)
 print("Programming" not in course)
+
+# 9: numbers
+
+x1 = 10
+x2 = 0b10
+x3 = 0x12c
+print(x1)
+print(bin(x2))
+print(hex(x3))
+
+# a + bi
+x4 = 1 + 2j
+print(x4)
+
+
+# 10: arithmetic operators
+
+y1 = 10 + 3
+y2 = 10 - 3
+y3 = 10 * 3
+y4 = 10 / 3
+y5 = 10 // 3
+y6 = 10 % 3
+y7 = 10 ** 3
+
+y8 = 0
+y8 += 1
+
+print(y1)
+print(y2)
+print(y3)
+print(y4)
+print(y5)
+print(y6)
+print(y7)
+print(y8)
+
+# 11: working with numbers
+
+
+PI = -3.14  # markup for constant
+print(round(PI))
+print(abs(PI))
+print(math.floor(PI))
+
+# search python math module for more info
+
+# 12: type conversion
+
+x = input("x: ")
+print(int(x))
+print(float(x))
+print(bool(x))
+# str(x)
+
+
+# 13: conditional statements
