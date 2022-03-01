@@ -171,3 +171,86 @@ if 18 <= age < 65:
 
 message = "Eligible" if age >= 18 else "Not eligible"
 print(message)
+
+# 16: for loops
+
+for x in "Python":
+    print(x)
+
+for x in ['a', 'b', 'c']:
+    print(x)
+
+for x in range(0, 10, 2):
+    print(x)
+
+print(type(range(5)))
+
+
+# 17: for...else
+
+names = ["John", "Mary"]
+for name in names:
+    if name.startswith("J"):
+        print("Found")
+        break
+else:
+    print("Not found")
+
+# if the iteration completes without "break" then
+# the else statement will be valid
+
+# 18: while loops
+
+guess = 0
+answer = 5
+
+while answer != guess:
+    guess = int(input("Guess: "))
+else:
+    pass
+
+
+# 19: functions
+
+numberslist = [1, 2, 3]  # list
+numberstuple = (1, 2, 3)  # tuple
+
+
+def increment(number: int, by: int = 1) -> tuple:
+    return (number, number + by)
+
+
+print(increment(2, 3))
+print(increment(2))
+
+
+# 20: arguments xargs
+
+def multiply(*list):
+    total = 1
+    for number in list:
+        total *= number
+    return total
+
+
+print(multiply(2, 3, 4, 5))  # python packages multiple arguments into a tuple
+
+
+# 21: arguments xxargs
+
+
+def save_user(**user):
+    print(user)
+    print(user["name"])
+
+# ^^^^^^this creates a dictionary which is similar to an object
+
+
+save_user(id=1, name="admin")
+
+
+# 22: scope
+def greet():
+    if True:
+        message = "a"
+    print(message)
