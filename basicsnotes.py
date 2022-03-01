@@ -2,7 +2,7 @@
 
 # type annotation(conflict)
 
-#x: int = 1
+# x: int = 1
 # x = "Sample John"  # <<<<<this will throw a runtime error
 
 # mutable
@@ -70,7 +70,7 @@ print(course.lower())
 print(course.title())
 
 print(course.strip())  # deletes whitespaces
-print(course.lstrip())  # deletes whitespaces at the beginning called left strip
+print(course.lstrip())  # deletes whitespaces at the beginning called left stri
 print(course.rstrip())  # deletes whitespaces at the end called right strip
 
 print(course.find("pro"))
@@ -127,7 +127,8 @@ print(math.floor(PI))
 
 # 12: type conversion
 
-x = input("x: ")
+# x = input("x: 3")
+x = 3
 print(int(x))
 print(float(x))
 print(bool(x))
@@ -135,3 +136,38 @@ print(bool(x))
 
 
 # 13: conditional statements
+
+age = 22
+if age >= 18:
+    print("Adult")
+    print("Adult")
+elif age >= 13:
+    print("Teenager")
+else:
+    print("Child")
+
+print("All done")
+
+
+# 14: conditional operators
+
+name = " "
+
+if not name.strip():
+    print("Name is empty")
+
+
+age = 22
+if age >= 18 and age < 65:
+    print("Eligible")
+
+# chaining comparison operators
+
+age = 22
+if 18 <= age < 65:
+    print("Eligible")
+
+# 15: ternary operators
+
+message = "Eligible" if age >= 18 else "Not eligible"
+print(message)
