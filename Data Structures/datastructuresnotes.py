@@ -1,5 +1,6 @@
 # 1: lists
 
+from sys import getsizeof
 from array import array
 from collections import deque
 letters = ["a", "b", "c"]
@@ -270,11 +271,78 @@ if 1 in first:
 
 # 19: dictionaries
 
+# key value pair data structure
+
+coordinates = {"x": 1, "y": 2}  # long syntax
+coordinates = dict(x=1, y=2)  # short syntax
+print(coordinates["x"])
+coordinates["x"] = 10
+coordinates["z"] = 20
+
+print(coordinates)
+
+if "a" in coordinates:
+    print(coordinates["a"])
+print(coordinates.get("a", 0))
+del coordinates["x"]
+print(coordinates)
+
+for key in coordinates:
+    print(key, coordinates[key])
+
+for key, value in coordinates.items():
+    print(key, value)
 
 # 20: dictionary comprehensions
+
+values = []
+for x in range(5):
+    values.append(x * 2)  # old syntac
+
+
+values = [x * 2 for x in range(5)]  # new sytax
+values = {x * 2 for x in range(5)}  # new sytax for set output
+
+print(values)
+
+values = {x: x * 2 for x in range(5)}  # new sytax for dictionary output
+
+print(values)
+
+# BUT!!! Unfortunately we cant generate tuples the same way :(((
 
 
 # 21: generator expressions
 
+# generator objects they don't store each value in memory
+
+# from sys import getsizeof
+
+values = (x * 2 for x in range(100000))
+print("gen:", getsizeof(values))  # gen: 104 bytes
+# print(len(values)) ---> will throw an error
+
+values = [x * 2 for x in range(100000)]
+print("list:", getsizeof(values))  # list: 800984
 
 # 22: unpacking operators
+
+numbers = [1, 2, 3]
+print(*numbers)  # '*' unpacking operator same as spread in javascript
+
+values = list(range(5))
+print(values)
+values = [*range(5), *"Hello"]
+print(values)
+
+first = [1, 2]
+second = [3]
+values = [*first, *second]
+print(values)
+
+# unpacking dictionaries:
+
+firstdict = {"x": 1}
+seconddict = {"x": 10, "y": 2}
+combined = {**firstdict, **seconddict, "z": 1}
+print(combined)
