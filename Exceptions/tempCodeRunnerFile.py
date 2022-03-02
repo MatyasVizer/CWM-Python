@@ -1,0 +1,1 @@
+print("Second code: ", timeit(code2, number=100000))

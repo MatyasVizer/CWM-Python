@@ -16,5 +16,6 @@ char_frequency_sorted = sorted(
     reverse=True)
 
 # char_frequency.items() returns all key/value pairs as tuples
+# because you can't sort dictionaries
 
 pprint(char_frequency_sorted[0])
