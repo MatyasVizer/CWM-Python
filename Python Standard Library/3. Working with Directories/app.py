@@ -16,5 +16,6 @@ for p in path.iterdir():
 
 
 paths = [p for p in path.iterdir() if p.is_dir()]
-path.glob("*.py")
-print(paths)
+py_files = [p for p in path.glob("**/*.py")]  # recursive **/
+py_files = [p for p in path.rglob("*.py")]  # or rglob
+print(py_files)
