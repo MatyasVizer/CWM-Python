@@ -9,7 +9,7 @@ message = MIMEMultipart()
 message["from"] = "test"
 message["to"] = "test@gmail.com"
 message["subject"] = "This is a test"
-message.attach(MIMEText("Body"))
+message.attach(MIMEText("Body", "plain"))
 message.attach(MIMEImage(Path("test.png").read_bytes))
 
 with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
